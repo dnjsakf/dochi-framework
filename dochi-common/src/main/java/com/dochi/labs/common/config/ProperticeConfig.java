@@ -6,6 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
+//@PropertySource(value = { // for Spring 4.x
 @PropertySource({
     "classpath:conf/${spring.profiles.active:local}/db.properties",
     "classpath:conf/${spring.profiles.active:local}/conf.properties"
@@ -16,5 +17,5 @@ public class ProperticeConfig {
     public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer(){
         return new PropertySourcesPlaceholderConfigurer();
     }
-
+    
 }

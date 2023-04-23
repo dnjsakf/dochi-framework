@@ -20,7 +20,8 @@ public class CommonController {
     @GetMapping("")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
         try {
-            return String.format("Hello %s!", commaonSql.selectOne("Sample.getNow"));
+            String now = commaonSql.selectOne("Sample.getNow");
+            return String.format("Hello %s!", now);
         } catch (SQLException e) {
             e.printStackTrace();
         }
